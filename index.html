@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUXEWEAR | Modern Fashion Store</title>
+
+<meta name="description" content="LUXEWEAR - Modern fashion for every style.">
+
+<style>
+:root {
+    --black: #111;
+    --dark: #1b1b1b;
+    --cream: #f7f4ef;
+    --white: #fff;
+    --muted: #777;
+    --line: #e8e5df;
+    --accent: #b88a5a;
+    --sale: #b42318;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+select {
+    font: inherit;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.cart-btn {
+    border: 0;
+    background: var(--black);
+    color: white;
+    padding: 11px 18px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.cart-count {
+    background: var(--accent);
+    padding: 2px 7px;
+    border-radius: 20px;
+    margin-left: 5px;
+}
+
+.menu-btn {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    background:
+        linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.42)),
+        url("hero-fashion.jpg") center/cover;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero small {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border: 1px solid white;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-dark {
+    background: var(--black);
+    color: white;
+    border-color: var(--black);
+}
+
+.btn-light {
+    background: white;
+    color: var(--black);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* SECTION */
+
+section {
+    padding: 80px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading span {
+    color: var(--accent);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    margin-top: 8px;
+}
+
+/* CATEGORIES */
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.category {
+    position: relative;
+    height: 330px;
+    overflow: hidden;
+    color: white;
+}
+
+.category img {
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.category:hover img {
+    transform: scale(1.06);
+}
+
+.category::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,.75));
+}
+
+.category-content {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    left: 25px;
+}
+
+.category-content h3 {
+    font-size: 25px;
+}
+
+/* PRODUCTS */
+
+.shop-tools {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    border: 1px solid var(--line);
+    background: white;
+    padding: 10px 17px;
+    cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--black);
+    color: white;
+}
+
+.sort {
+    border: 1px solid var(--line);
+    padding: 10px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    position: relative;
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.product-image img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+.product-info {
+    padding-top: 14px;
+}
+
+.product-category {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-name {
+    font-size: 17px;
+    margin: 4px 0;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--muted);
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.add-btn {
+    width: 100%;
+    border: 1px solid var(--black);
+    background: white;
+    padding: 11px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: var(--black);
+    color: white;
+}
+
+/* COLLECTION */
+
+.collection {
+    background: var(--cream);
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.collection-text h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.collection-text p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.collection img {
+    height: 500px;
+    object-fit: cover;
+}
+
+/* BENEFITS */
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.benefit {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid var(--line);
+}
+
+.benefit-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.benefit h3 {
+    margin-bottom: 8px;
+}
+
+.benefit p {
+    color: var(--muted);
+}
+
+/* NEWSLETTER */
+
+.newsletter {
+    background: var(--black);
+    color: white;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.newsletter-form {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+}
+
+.newsletter-form button {
+    border: none;
+    padding: 15px 25px;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0b0b0b;
+    color: white;
+    padding: 55px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+}
+
+.footer-column p,
+.footer-column a {
+    color: #aaa;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 40px;
+    padding-top: 20px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* CART */
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 2000;
+    display: none;
+}
+
+.cart-overlay.active {
+    display: block;
+}
+
+.cart {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: min(430px, 95%);
+    background: white;
+    padding: 25px;
+    overflow-y: auto;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 15px;
+}
+
+.close-cart {
+    border: 0;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.cart-items {
+    padding: 20px 0;
+}
+
+.cart-item {
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid var(--line);
+    padding: 15px 0;
+}
+
+.cart-item img {
+    width: 75px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.remove-item {
+    border: 0;
+    background: none;
+    color: var(--sale);
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.cart-total {
+    border-top: 2px solid var(--black);
+    padding-top: 15px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    background: #25D366;
+    color: white;
+    border: 0;
+    padding: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* MOBILE */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 25px;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        gap: 10px;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+
+    section {
+        padding: 60px 0;
+    }
+
+    .hero {
+        min-height: 570px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .categories,
+    .products,
+    .benefits,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category {
+        height: 300px;
+    }
+
+    .products {
+        gap: 18px;
+    }
+
+    .collection-text h2 {
+        font-size: 38px;
+    }
+
+    .collection img {
+        height: 350px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .footer-grid {
+        gap: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="container navbar">
+
+        <a href="#" class="logo">LUXEWEAR</a>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#new">New Arrivals</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <button class="cart-btn" onclick="openCart()">
+                Cart
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <small>New Season 2026</small>
+
+            <h1>Wear your own story.</h1>
+
+            <p>
+                Modern fashion designed for people who want
+                to look confident, comfortable and unforgettable.
+            </p>
+
+            <a href="#shop" class="btn btn-light">
+                Shop Collection
+            </a>
+
+            <a href="#new" class="btn btn-dark">
+                New Arrivals
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Shop by style</span>
+            <h2>Find your look</h2>
+        </div>
+
+        <div class="categories">
+
+            <a href="#shop" class="category">
+                <img src="women.jpg" alt="Women's fashion">
+                <div class="category-content">
+                    <h3>Women</h3>
+                    <p>Explore collection →</p>
+                </div>
+            </a>
+
+            <a href="#shop" class="category">
+                <img src="men.jpg" alt="Men's fashion">
+                <div class="category-content">
+                    <h3>Men</h3>
+                    <p>Explore collection →</p>
+                </div>
+            </a>
+
+            <a href="#shop" class="category">
+                <img src="streetwear.jpg" alt="Streetwear">
+                <div class="category-content">
+                    <h3>Streetwear</h3>
+                    <p>Explore collection →</p>
+                </div>
+            </a>
+
+            <a href="#shop" class="category">
+                <img src="accessories.jpg" alt="Fashion accessories">
+                <div class="category-content">
+                    <h3>Accessories</h3>
+                    <p>Explore collection →</p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SHOP -->
+
+<section id="shop">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>Our collection</span>
+
+            <h2>Shop the latest</h2>
+
+        </div>
+
+
+        <div class="shop-tools">
+
+            <div class="filters">
+
+                <button class="filter-btn active"
+                        onclick="filterProducts('all', this)">
+                    All
+                </button>
+
+                <button class="filter-btn"
+                        onclick="filterProducts('women', this)">
+                    Women
+                </button>
+
+                <button class="filter-btn"
+                        onclick="filterProducts('men', this)">
+                    Men
+                </button>
+
+                <button class="filter-btn"
+                        onclick="filterProducts('streetwear', this)">
+                    Streetwear
+                </button>
+
+                <button class="filter-btn"
+                        onclick="filterProducts('accessories', this)">
+                    Accessories
+                </button>
+
+            </div>
+
+
+            <select class="sort" id="sortProducts"
+                    onchange="sortProducts()">
+
+                <option value="featured">Featured</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="products" id="productGrid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card"
+                 data-category="men"
+                 data-price="699">
+
+                <div class="product-image">
+
+                    <img src="product-1.jpg"
+                         alt="Classic Blazer">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        Men
+                    </div>
+
+                    <div class="product-name">
+                        Classic Blazer
+                    </div>
+
+                    <div class="price">
+                        R699
+                    </div>
+
+                    <button class="add-btn"
+                            onclick="addToCart(
+                            'Classic Blazer',
+                            699,
+                            'product-1.jpg'
+                            )">
+                        Add to cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card"
+                 data-category="men"
+                 data-price="499">
+
+                <div class="product-image">
+
+                    <img src="product-2.jpg"
+                         alt="Premium Shirt">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        Men
+                    </div>
+
+                    <div class="product-name">
+                        Premium Shirt
+                    </div>
+
+                    <div class="price">
+                        R499
+                        <span class="old-price">R599</span>
+                    </div>
+
+                    <button class="add-btn"
+                            onclick="addToCart(
+                            'Premium Shirt',
+                            499,
+                            'product-2.jpg'
+                            )">
+                        Add to cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card"
+                 data-category="women"
+                 data-price="799">
+
+                <div class="product-image">
+
+                    <img src="product-3.jpg"
+                         alt="Satin Dress">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        Women
+                    </div>
+
+                    <div class="product-name">
+                        Satin Dress
+                    </div>
+
+                    <div class="price">
+                        R799
+                    </div>
+
+                    <button class="add-btn"
+                            onclick="addToCart(
+                            'Satin Dress',
+                            799,
+                            'product-3.jpg'
+                            )">
+                        Add to cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card"
+                 data-category="streetwear"
+                 data-price="449">
+
+                <div class="product-image">
+
+                    <img src="product-4.jpg"
+                         alt="Oversized Hoodie">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        Streetwear
+                    </div>
+
+                    <div class="product-name">
+                        Oversized Hoodie
+                    </div>
+
+                    <div class="price">
+                        R449
+                    </div>
+
+                    <button class="add-btn"
+                            onclick="addToCart(
+                            'Oversized Hoodie',
+                            449,
+                            'product-4.jpg'
+                            )">
+                        Add to cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="product-card"
+                 data-category="women"
+                 data-price="599">
+
+                <div class="product-image">
+
+                    <img src="product-5.jpg"
+                         alt="Relaxed Trousers">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        Women
+                    </div>
+
+                    <div class="product-name">
+                        Relaxed Trousers
+                    </div>
+
+                    <div class="price">
+                        R599
+                    </div>
+
+                    <button class="add-btn"
+                            onclick="addToCart(
+                            'Relaxed Trousers',
+                            599,
+                            'product-5.jpg'
+                            )">
+                        Add to cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+
+            <div class="product-card"
+                 data-category="accessories"
+                 data-price="299">
+
+                <div class="product-image">
+
+                    <img src="product-6.jpg"
+                         alt="Leather Handbag">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        Accessories
+                    </div>
+
+                    <div class="product-name">
+                        Leather Handbag
+                    </div>
+
+                    <div class="price">
+                        R299
+                    </div>
+
+                    <button class="add-btn"
+                            onclick="addToCart(
+                            'Leather Handbag',
+                            299,
+                            'product-6.jpg'
+                            )">
+                        Add to cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 7 -->
+
+            <div class="product-card"
+                 data-category="streetwear"
+                 data-price="399">
+
+                <div class="product-image">
+
+                    <img src="product-7.jpg"
+                         alt="Graphic T-Shirt">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        Streetwear
+                    </div>
+
+                    <div class="product-name">
+                        Graphic T-Shirt
+                    </div>
+
+                    <div class="price">
+                        R399
+                    </div>
+
+                    <button class="add-btn"
+                            onclick="addToCart(
+                            'Graphic T-Shirt',
+                            399,
+                            'product-7.jpg'
+                            )">
+                        Add to cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 8 -->
+
+            <div class="product-card"
+                 data-category="accessories"
+                 data-price="249">
+
+                <div class="product-image">
+
+                    <img src="product-8.jpg"
+                         alt="Classic Sunglasses">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        Accessories
+                    </div>
+
+                    <div class="product-name">
+                        Classic Sunglasses
+                    </div>
+
+                    <div class="price">
+                        R249
+                    </div>
+
+                    <button class="add-btn"
+                            onclick="addToCart(
+                            'Classic Sunglasses',
+                            249,
+                            'product-8.jpg'
+                            )">
+                        Add to cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COLLECTION -->
+
+<section class="collection" id="new">
+
+    <div class="container collection-grid">
+
+        <div class="collection-text">
+
+            <span>New collection</span>
+
+            <h2>
+                Made for the moments that matter.
+            </h2>
+
+            <p>
+                Discover pieces designed to move with you.
+                From everyday essentials to statement pieces,
+                build a wardrobe that feels completely yours.
+            </p>
+
+            <a href="#shop" class="btn btn-dark">
+                Explore collection
+            </a>
+
+        </div>
+
+        <img src="collection.jpg"
+             alt="New fashion collection">
+
+    </div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>Why shop with us</span>
+
+            <h2>Simple. Stylish. Reliable.</h2>
+
+        </div>
+
+
+        <div class="benefits">
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    🚚
+                </div>
+
+                <h3>Fast Delivery</h3>
+
+                <p>
+                    Get your order delivered quickly
+                    and safely.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    🔒
+                </div>
+
+                <h3>Secure Shopping</h3>
+
+                <p>
+                    Your information is handled
+                    with care.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ♻
+                </div>
+
+                <h3>Easy Returns</h3>
+
+                <p>
+                    Simple returns when your purchase
+                    isn't right for you.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="collection">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>About LUXEWEAR</span>
+
+            <h2>Fashion without limits.</h2>
+
+        </div>
+
+        <p style="
+            max-width:750px;
+            margin:auto;
+            text-align:center;
+            color:#777;
+        ">
+
+            LUXEWEAR is a modern fashion store created for
+            people who believe clothing is more than something
+            you wear. It is a way to express your personality,
+            confidence and individuality.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+    <div class="container">
+
+        <h2>Stay in style.</h2>
+
+        <p>
+            Sign up for new collections, special offers
+            and fashion updates.
+        </p>
+
+        <form class="newsletter-form"
+              onsubmit="subscribe(event)">
+
+            <input
+                type="email"
+                placeholder="Your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+
+                <h3>LUXEWEAR</h3>
+
+                <p>
+                    Modern fashion for every story.
+                </p>
+
+                <p>
+                    Johannesburg, South Africa
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Shop</h3>
+
+                <a href="#shop">Women</a>
+                <a href="#shop">Men</a>
+                <a href="#shop">Streetwear</a>
+                <a href="#shop">Accessories</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Help</h3>
+
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <a href="mailto:hello@luxewear.co.za">
+                    hello@luxewear.co.za
+                </a>
+
+                <a href="tel:+27000000000">
+                    +27 00 000 0000
+                </a>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 LUXEWEAR. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- CART -->
+
+<div class="cart-overlay" id="cartOverlay">
+
+    <div class="cart">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="cart-items"
+             id="cartItems">
+
+            <p>Your cart is empty.</p>
+
+        </div>
+
+
+        <div class="cart-total">
+
+            <span>Total</span>
+
+            <strong id="cartTotal">
+                R0
+            </strong>
+
+        </div>
+
+
+        <button
+            class="checkout-btn"
+            onclick="checkoutWhatsApp()">
+
+            Order via WhatsApp
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu() {
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("show");
+
+}
+
+
+/* CART */
+
+let cart = [];
+
+
+function addToCart(name, price, image) {
+
+    cart.push({
+        name: name,
+        price: price,
+        image: image
+    });
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+function updateCart() {
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+    const cartTotal =
+        document.getElementById("cartTotal");
+
+
+    cartCount.textContent = cart.length;
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML =
+            "<p>Your cart is empty.</p>";
+
+        cartTotal.textContent = "R0";
+
+        return;
+    }
+
+
+    let total = 0;
+
+
+    cartItems.innerHTML = cart
+        .map((item, index) => {
+
+            total += item.price;
+
+            return `
+                <div class="cart-item">
+
+                    <img src="${item.image}"
+                         alt="${item.name}">
+
+                    <div class="cart-item-info">
+
+                        <strong>${item.name}</strong>
+
+                        <p>R${item.price}</p>
+
+                        <button
+                            class="remove-item"
+                            onclick="removeItem(${index})">
+
+                            Remove
+
+                        </button>
+
+                    </div>
+
+                </div>
+            `;
+
+        })
+        .join("");
+
+
+    cartTotal.textContent =
+        "R" + total;
+
+}
+
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+}
+
+
+function openCart() {
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("active");
+
+}
+
+
+function closeCart() {
+
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("active");
+
+}
+
+
+/* WHATSAPP CHECKOUT */
+
+function checkoutWhatsApp() {
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty.");
+
+        return;
+    }
+
+
+    /*
+       CHANGE THIS NUMBER
+       TO THE CLIENT'S WHATSAPP NUMBER.
+
+       Use international format.
+
+       Example:
+       27821234567
+    */
+
+    const phone =
+        "27000000000";
+
+
+    let message =
+        "Hello LUXEWEAR, I would like to order:%0A%0A";
+
+
+    let total = 0;
+
+
+    cart.forEach((item, index) => {
+
+        message +=
+            (index + 1) +
+            ". " +
+            item.name +
+            " - R" +
+            item.price +
+            "%0A";
+
+        total += item.price;
+
+    });
+
+
+    message +=
+        "%0ATotal: R" +
+        total;
+
+
+    const url =
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        message;
+
+
+    window.open(url, "_blank");
+
+}
+
+
+/* PRODUCT FILTER */
+
+function filterProducts(category, button) {
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+
+    document
+        .querySelectorAll(".filter-btn")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+
+    products.forEach(product => {
+
+        const productCategory =
+            product.dataset.category;
+
+
+        if (
+            category === "all" ||
+            productCategory === category
+        ) {
+
+            product.style.display = "";
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* PRODUCT SORT */
+
+function sortProducts() {
+
+    const grid =
+        document.getElementById("productGrid");
+
+    const products =
+        Array.from(
+            grid.querySelectorAll(".product-card")
+        );
+
+
+    const value =
+        document.getElementById("sortProducts").value;
+
+
+    if (value === "low") {
+
+        products.sort(
+            (a, b) =>
+                Number(a.dataset.price) -
+                Number(b.dataset.price)
+        );
+
+    }
+
+
+    if (value === "high") {
+
+        products.sort(
+            (a, b) =>
+                Number(b.dataset.price) -
+                Number(a.dataset.price)
+        );
+
+    }
+
+
+    products.forEach(product => {
+
+        grid.appendChild(product);
+
+    });
+
+}
+
+
+/* NEWSLETTER */
+
+function subscribe(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Thank you for subscribing to LUXEWEAR!"
+    );
+
+}
+
+
+/* CLOSE CART WHEN CLICKING OUTSIDE */
+
+document
+    .getElementById("cartOverlay")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+
+            closeCart();
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
